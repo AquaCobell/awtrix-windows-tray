@@ -96,7 +96,7 @@ public class Httpcontroller implements Runnable
         @Override
         public void run() 
         {
-            while(t1.getPercentagetillEnd() != 100 && !Thread.interrupted() ) //
+            while(t1.getPercentagetillEnd() != 100 && !Thread.interrupted() ) 
             try 
             {
                 updateDuration((int) t1.getPercentagetillEnd());

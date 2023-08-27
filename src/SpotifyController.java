@@ -12,11 +12,13 @@ public class SpotifyController
     private SpotifyAPI spotify;
     Httpcontroller httpcontroller;
     Thread t1;
+    boolean active;
 
     SpotifyController(String url)
     {
         spotify = SpotifyAPIFactory.create();
         httpcontroller = new Httpcontroller("http://192.168.188.74/api/custom?name=Spotify");
+        active = false;
     }
 
     public void register()
@@ -103,13 +105,41 @@ public class SpotifyController
         });
 
         spotify.initialize();
-
-
+        
     }
 
+    public void stop()
+    {
+        try
+        {
+            t1.interrupt();
+            
+        }
+        catch(Exception e)
+        {
+            System.out.println("Fehler: " + e);
+        }    
+        
+        try 
+        {
+            spotify.stop();
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("Fehler: " + e);
+        }
+    }
    
-       
+
+    public boolean getactive()
+    {
+        return this.active;
+    }
      
+    public void setactive(boolean active)
+    {
+        this.active = active;
+    }
 
 
 }
