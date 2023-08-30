@@ -13,4 +13,16 @@
 
 
 
-### How to install
+### How to Run
+
+##### Requirements:
+- Ulanzi AWTRIX with Awtrix Light
+- Java Version 17+
+
+Download .jar file from Release Section and run it.
+
+### Planned Features
+- Show Weather
+- Show PC Temperatures
+
+
