@@ -100,15 +100,14 @@ public class Httpcontroller implements Runnable
             try 
             {
                 updateDuration((int) t1.getPercentagetillEnd());
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(1);
             } 
             catch (IOException e) 
             {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             } 
             catch (InterruptedException e) {
-                // TODO Auto-generated catch block
+               
                 e.printStackTrace();
                 return;
             }

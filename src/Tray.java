@@ -1,6 +1,8 @@
 
 import java.awt.AWTException;
+import java.awt.CheckboxMenuItem;
 import java.awt.Image;
+import java.awt.Menu;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
@@ -8,7 +10,7 @@ import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+
 
 
 public class Tray 
@@ -16,13 +18,29 @@ public class Tray
    
 
     SpotifyController controller;
+    Savecontroller savecontroller;
+    Config config;
+    Gui gui;
       
        
        
 
-    Tray()
+    Tray(Savecontroller savecontroller, Config config)
     {
-        controller = new SpotifyController("http://192.168.188.74/api/custom?name=Spotify");
+        gui = new Gui();
+
+        if(config != null)
+        {
+            controller = new SpotifyController("http://"+ config.getUrl() + "/api/custom?name=Spotify");
+             
+        }
+        else
+        {
+            //controller = new SpotifyController("http://192.168.188.74/api/custom?name=Spotify");
+            //placeholder
+            controller = new SpotifyController("http://192.168.222.74/api/custom?name=Spotify");
+        }
+       
     }
 
     public void loadTray() throws AWTException
@@ -40,7 +58,14 @@ public class Tray
 
             MenuItem spotify= new MenuItem("Activate Spotify");
             MenuItem exit = new MenuItem("Exit");
+             
+            
+            Menu settings = new Menu("Settings");
 
+            MenuItem setAdress = new MenuItem("Set IP");
+            MenuItem progressBar = new MenuItem("Disable Progress Bar");
+
+            
             exit.addActionListener(new ActionListener() {
 
                 @Override
@@ -62,6 +87,7 @@ public class Tray
                         spotify.setLabel("Disable Spotify");
                         controller.register();
                         controller.setactive(true);
+                        
                    }
                    else
                    {
@@ -76,8 +102,26 @@ public class Tray
             });
 
 
+             setAdress.addActionListener(new ActionListener() 
+             {
+
+                @Override
+                public void actionPerformed(ActionEvent e) 
+                {
+                    System.out.println("GOT:" + gui.enterIP());
+                     
+                }
+                
+            }
+            );
+
+
             popup.add(spotify);
+            popup.add(settings);
             popup.add(exit);
+            settings.add(setAdress);
+            settings.add(progressBar);
+
 
 
 

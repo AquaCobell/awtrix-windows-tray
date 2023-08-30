@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Nico\\Desktop\\awtrix spotify\\awtspot java\\awtspottray\\jar\\java-spotify-api-1.1.14-all.jar"
+    ]
+}

@@ -13,10 +13,16 @@ public class SpotifyController
     Httpcontroller httpcontroller;
     Thread t1;
     boolean active;
+    Savecontroller save;
 
     SpotifyController(String url)
     {
         spotify = SpotifyAPIFactory.create();
+
+        
+      
+
+
         httpcontroller = new Httpcontroller("http://192.168.188.74/api/custom?name=Spotify");
         active = false;
     }
