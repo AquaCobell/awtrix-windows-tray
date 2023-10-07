@@ -7,9 +7,9 @@
 
 
 ### Pictures
-![When Muted in Discord](https://imgur.com/a/ktE3scc)
+![When Muted in Discord](https://i.imgur.com/iATtqxx.png)
 
-![When Unmuted in Discord](https://imgur.com/a/a6khuF2)
+![When Unmuted in Discord](https://i.imgur.com/efBhZJr.png)
 
 # AWTRIX Windows Tray
 
