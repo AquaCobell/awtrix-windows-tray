@@ -18,11 +18,16 @@
 ##### Requirements:
 - Ulanzi AWTRIX with Awtrix Light
 - Java Version 17+
+- Discord Bot Token
+- Discord User ID
 
 #### Initital Setup
 Download icon 31722 on your Awtrix
 Download .jar file from Release Section and run it.
-Go in your Windows Tray -> Settings > General > Enter local IP Adress from your Ulanzi Clock
+
+Now a purple spotify icon should be in your windows tray.
+
+Right click -> Settings > General > Enter local IP Adress from your Ulanzi Clock
 
 Settings > Discord > SetDiscordToken > Enter your Discord Bot Token
 
@@ -31,12 +36,13 @@ Settings > Discord > SetUserID > Enter your Discord User ID
 Settings > Safe all Settings 
 
 #### Run
-Go in your Windows Tray > Activate Discord
+Right click tray icon > Activate Discord 
+
 Now join any Channel in your Discord Server and try it out :)
 
 Settings are always loaded when program starts and are safed in settings.obj which should be in the same directory as your .jar
 
-You can always overwrite this settings with the Tray Options, and if you click Safe all Settings they will be written in the settings.obj for next start.
+You can always overwrite this settings with the Tray Settings, and if you click Safe all Settings they will be written in the settings.obj for next start.
 
 
 
