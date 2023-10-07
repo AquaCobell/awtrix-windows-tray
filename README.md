@@ -23,8 +23,11 @@
 Download icon 31722 on your Awtrix
 Download .jar file from Release Section and run it.
 Go in your Windows Tray -> Settings > General > Enter local IP Adress from your Ulanzi Clock
+
 Settings > Discord > SetDiscordToken > Enter your Discord Bot Token
+
 Settings > Discord > SetUserID > Enter your Discord User ID
+
 Settings > Safe all Settings 
 
 #### Run
