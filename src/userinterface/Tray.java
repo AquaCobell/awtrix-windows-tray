@@ -73,7 +73,7 @@ public class Tray
             SystemTray tray = SystemTray.getSystemTray();
 
             
-            Image image = Toolkit.getDefaultToolkit().getImage("icon.png");
+            Image image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/icon.png"));
 
             PopupMenu popup = new PopupMenu();
 
