@@ -3,6 +3,13 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "jar/java-spotify-api-1.1.14-all.jar"
+        "jar/javaee-api-8.0.1.jar",
+        "jar/jackson-core-2.9.9-sources.jar",
+        "jar/jackson-databind-2.9.9.3.jar",
+        "jar/jackson-core-2.9.9-javadoc.jar",
+        "jar/jackson-core-2.9.9.jar",
+        "jar/jackson-annotations-2.15.2.jar",
+        "jar/java-spotify-api-1.1.15-all.jar",
+        "jar/JDA-5.0.0-beta.15.jar"
     ]
 }

@@ -1,47 +1,29 @@
 import java.awt.AWTException;
+import java.util.ResourceBundle.Control;
+import java.util.concurrent.TimeUnit;
+
+import Discord.Discord;
+import main.Controller;
+import userinterface.Tray;
+import utils.Sender;
+import utils.Timer;
 
 
 public class Main {
-    public static void main(String[] args) 
+    public static void main(String[] args) throws InterruptedException 
     {
        
-
-        //SpotifyController controller = new SpotifyController("http://192.168.188.74/api/custom?name=Spotify");
-      
-        //controller.register();
-
-
         
-
-        Savecontroller save = new Savecontroller();
-        //Config conf = new Config("http://192.168.188.74/api/custom?name=Spotify");
-        //save.safesettings(conf);
- 
-        Config config = null;
-        try 
-        {
-            config = save.loadsettings();
-        }
-        catch(Exception e)
-        {
-            System.out.println("No config found");
-        }
-        //Config config  = new Config("test");
-        
-        
-
-
-        Tray tray = new Tray(save, config);
-        try 
-        {
+        Tray tray = new Tray();
+        try {
             tray.loadTray();
-        } 
-        catch (AWTException e) {
-            // TODO Auto-generated catch block
+        } catch (AWTException e) {
+            
             e.printStackTrace();
         }
+      
 
-       
+      
 
 
     }

@@ -1,3 +1,4 @@
+package Spotify;
 
 import java.io.IOException;
 import java.net.URI;
@@ -5,6 +6,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.concurrent.TimeUnit;
+
+import utils.Timer;
 
 
 public class Httpcontroller implements Runnable
@@ -46,8 +49,8 @@ public class Httpcontroller implements Runnable
                 //time = System.currentTimeMillis();
                 //this.duration = duration;
                 currentSong = songname;
-                t1 = new Timer(duration);
-                t1.startTimer();
+                t1 = new Timer();
+                t1.start(duration);
             }
 
             System.out.println(this.json1 + songname + json2);
@@ -64,18 +67,7 @@ public class Httpcontroller implements Runnable
 
         public void updateDuration(int duration) throws IOException, InterruptedException
         {
-            /*long timeMillis = System.currentTimeMillis();
-          
-
-            //Zeit die bereits vergangen is
-            long currentime = timeMillis-this.time; System.out.println("Zeit die vergangen is: "+ currentime);
-
-            long onepercent = duration/100; System.out.println("1 Prozent: "+ onepercent);
-            long progress = 0;
-            if(onepercent != 0 )
-            {
-                progress = currentime/onepercent;   System.out.println("progress "+ progress);
-            }*/
+            
 
 
             HttpRequest request = HttpRequest.newBuilder()
@@ -96,10 +88,10 @@ public class Httpcontroller implements Runnable
         @Override
         public void run() 
         {
-            while(t1.getPercentagetillEnd() != 100 && !Thread.interrupted() ) 
+            while(t1.getProgress() != 100 && !Thread.interrupted() ) 
             try 
             {
-                updateDuration((int) t1.getPercentagetillEnd());
+                updateDuration((int) t1.getProgress());
                 TimeUnit.SECONDS.sleep(1);
             } 
             catch (IOException e) 
@@ -129,5 +121,9 @@ public class Httpcontroller implements Runnable
             System.out.println(respone);
 
         }*/
+
+        public Timer getT1() {
+            return t1;
+        }
 
 }

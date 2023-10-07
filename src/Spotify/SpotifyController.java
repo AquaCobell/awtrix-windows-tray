@@ -1,9 +1,11 @@
+package Spotify;
 import java.io.IOException;
 
 import de.labystudio.spotifyapi.SpotifyAPI;
 import de.labystudio.spotifyapi.SpotifyAPIFactory;
 import de.labystudio.spotifyapi.SpotifyListener;
 import de.labystudio.spotifyapi.model.Track;
+import utils.Savecontroller;
 
 public class SpotifyController 
 {   
@@ -15,7 +17,7 @@ public class SpotifyController
     boolean active;
     Savecontroller save;
 
-    SpotifyController(String url)
+    public SpotifyController(String url)
     {
         spotify = SpotifyAPIFactory.create();
 
@@ -54,7 +56,7 @@ public class SpotifyController
                 try 
                 {
 
-                    
+                    System.out.println("------------------------------Songlänge: " + track.getLength());
                     httpcontroller.sendSong(track.getName(), track.getLength());
                     t1  = new Thread(httpcontroller);
                     t1.start();
@@ -88,12 +90,13 @@ public class SpotifyController
                 System.out.println(isPlaying ? "Song started playing" : "Song stopped playing");
                 if(isPlaying == true)
                 {
-
+                    httpcontroller.getT1().pause();
                 }
                 else
                 {
-
+                    httpcontroller.getT1().resume();
                 }
+                
             }
             
             @Override
