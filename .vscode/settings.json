@@ -10,6 +10,9 @@
         "jar/jackson-core-2.9.9.jar",
         "jar/jackson-annotations-2.15.2.jar",
         "jar/java-spotify-api-1.1.15-all.jar",
-        "jar/JDA-5.0.0-beta.15.jar"
+        "jar/JDA-5.0.0-beta.15.jar",
+        "jar/oshi/slf4j-api-2.0.9.jar",
+        "jar/java-spotify-api-1.1.14-all.jar",
+        "jar/JDA-5.0.0-beta.15-withDependencies.jar"
     ]
 }

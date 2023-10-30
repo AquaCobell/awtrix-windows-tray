@@ -1,12 +1,16 @@
 package model;
 import java.io.Serializable;
 
+
+
+//Model to safe settings
 public class Config implements Serializable 
 {
 
     String url;
     String token;
     String UserID;
+    boolean safestate;
     public Config(String url, String token, String UserID)
     {
         this.url = url;
@@ -36,6 +40,15 @@ public class Config implements Serializable
     public void setUserID(String userID2) 
     {
         this.UserID = userID2;
+    }
+
+    public void setSafestate(boolean safestate) {
+        this.safestate = safestate;
+    }
+
+    public boolean getSafeState()
+    {
+        return this.safestate;
     }
 
 

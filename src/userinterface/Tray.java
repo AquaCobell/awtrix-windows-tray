@@ -56,6 +56,11 @@ public class Tray
         {
             contr = new Controller(config.getUrl(), config.getToken(),config.getUserID());
             
+            if(config.getSafeState() == true)
+            {
+                contr.enableDiscord();
+            }
+            
         }
         else
         {
@@ -200,7 +205,15 @@ public class Tray
                 @Override
                 public void actionPerformed(ActionEvent e) 
                 {
+
+                    
                     contr.loadSettings();
+
+                    //Falls Discord vom Savefile aktiviert worden ist.
+                    if(contr.getDiscordStatus() == true)
+                    {
+                        discord.setState(true);
+                    }
                 }  
             });
 

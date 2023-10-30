@@ -79,16 +79,38 @@ public class Controller
    //Helper Konstruktor
    public void loadSettings()
    {
+
+     boolean startdiscord = false;
         try 
         {
             conf = this.savecontroller.loadsettings();
             if(conf!= null)
             {
+
+               
+               
+
                 this.url = conf.getUrl();
                 this.token = conf.getToken();
                 this.UserID = conf.getUserID();
+
+                 if(conf.getSafeState() == true)
+                    {
+                         startdiscord = true;
+                    
+                    }
+
+               
                reloadApps();
+
+               if(startdiscord = true)
+               {
+                    enableDiscord();
+               }
                System.out.println("Konfiguration geladen");
+
+              
+           
 
                 
                 
@@ -129,12 +151,21 @@ public class Controller
           if(this.conf == null)
           {
                this.conf = new Config(this.url, this.token, this.UserID);
+               if(this.getDiscordStatus()  == true)
+               {
+                    conf.setSafestate(true);
+               }
           }
           else
           {
                conf.setToken(this.token);
                conf.setUrl(this.url);
                conf.setUserID(this.UserID);
+                
+               if(this.getDiscordStatus()  == true)
+               {
+                    conf.setSafestate(true);
+               }
           }
           savecontroller.safesettings(this.conf);
      }
@@ -145,6 +176,11 @@ public class Controller
           {
                discord.startJDA();
                discordapp = true;
+
+               if(this.conf != null)
+               {
+                    this.conf.setSafestate(true);
+               }
           }
           
      }
